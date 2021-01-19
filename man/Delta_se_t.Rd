@@ -2,7 +2,7 @@
 % Please edit documentation in R/Delta_se_t.R
 \name{Delta_se_t}
 \alias{Delta_se_t}
-\title{A function to compute change points based on the  MNP method}
+\title{Delta_se_t function}
 \usage{
 Delta_se_t(y, z, s, e, t, h)
 }
@@ -15,6 +15,9 @@ Delta_se_t(y, z, s, e, t, h)
 
 \item{h}{bandwith parameter}
 }
+\value{
+val
+}
 \description{
-A function to compute change points based on the  MNP method
+Subroutine to compute change points based on the  MNP method
 }

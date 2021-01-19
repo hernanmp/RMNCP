@@ -1,4 +1,6 @@
-#' A function to compute change points based on the  MNP method
+#' new_MWBS function
+#'
+#' Sub-routine compute change points based on the  MNP method
 #' @param y a matrix containing the data. Row correspond to different time points and columns to different variables
 #' @param z a copy of the matrix y, it can be y itself
 #' @param s
@@ -10,7 +12,12 @@
 #' @param alpha
 #' @param beta
 #' @param h
-
+#' @return S
+#' @return Dval
+#' @return pos
+#' @export
+#' new_MWBS
+#' 
 new_MWBS =  function(y, z,s,e,flag=0,S=NULL,Dval=NULL,pos=1,alpha,beta,h)
 {
   #print("pos")

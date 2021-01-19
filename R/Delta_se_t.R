@@ -1,11 +1,16 @@
-#' A function to compute change points based on the  MNP method
+#' Delta_se_t function
+#'
+#' Subroutine to compute change points based on the  MNP method
 #' @param y a matrix containing the data. Row correspond to different time points and columns to different variables
 #' @param z a copy of the matrix y, it can be y itself
 #' @param s
 #' @param e 
 #' @param t
 #' @param h  bandwith parameter
-
+#' @return val
+#' @export
+#' Delta_se_t
+#' 
 Delta_se_t = function(y,z,s,e,t,h)
 {
   
@@ -18,10 +23,8 @@ Delta_se_t = function(y,z,s,e,t,h)
   
   dat  = y[(s+1):t,]
   
-  #H.pi <- Hpi(dat)
-  # temp = kdensity(dat, start = "gumbel", kernel = "gaussian");
+
   temp = kde(dat, gridsize = 30, eval.points = z, H = h*diag(p))
-  #temp  = mkde(dat[1:100,1:2])
   dat  = y[(t+1):e,]
   temp2 = kde(dat, gridsize = 30, eval.points = z, H = h*diag(p))
   

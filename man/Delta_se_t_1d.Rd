@@ -2,12 +2,15 @@
 % Please edit documentation in R/Delta_se_t_1d.R
 \name{Delta_se_t_1d}
 \alias{Delta_se_t_1d}
-\title{A function}
+\title{Delta_se_t_1d}
 \usage{
 Delta_se_t_1d(y, s, e, t, N)
 }
 \arguments{
 \item{y}{a matrix containing the data. Row correspond to different time points and columns to different variables}
+}
+\value{
+temp
 }
 \description{
 A function

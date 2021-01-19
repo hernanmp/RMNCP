@@ -1,7 +1,12 @@
+#' thresholding 
+#' 
 #' A function
 #' @param temp
 #' @param tau
 #' @param p
+#' @return Shat
+#' @export 
+#' thresholding
 #' 
 thresholding =  function(temp,tau,p)
 {

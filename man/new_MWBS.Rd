@@ -2,7 +2,7 @@
 % Please edit documentation in R/new_MWBS.R
 \name{new_MWBS}
 \alias{new_MWBS}
-\title{A function to compute change points based on the  MNP method}
+\title{new_MWBS function}
 \usage{
 new_MWBS(y, z, s, e, flag = 0, S = NULL, Dval = NULL, pos = 1, alpha, beta, h)
 }
@@ -13,6 +13,13 @@ new_MWBS(y, z, s, e, flag = 0, S = NULL, Dval = NULL, pos = 1, alpha, beta, h)
 
 \item{flag}{}
 }
+\value{
+S
+
+Dval
+
+pos
+}
 \description{
-A function to compute change points based on the  MNP method
+Sub-routine compute change points based on the  MNP method
 }

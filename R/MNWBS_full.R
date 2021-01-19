@@ -1,12 +1,16 @@
+#' MNWBS_full function
+#'
 #' A function to compute change points based on the  MNP method
-#' @param y a matrix containing the data. Row correspond to different time points and columns to different variables
-#' @param z a copy of the matrix y, it can be y itself
-#' @param alpha left end points of the random intervals
-#' @param beta right end points of the random intervals
-#' @param h  bandwith parameter
-#' @param len_tau number of tau parameters, default is 30
-
-
+#' @param y : a matrix containing the data. Row correspond to different time points and columns to different variables
+#' @param z : a copy of the matrix y, it can be y itself
+#' @param alpha : left end points of the random intervals
+#' @param beta : right end points of the random intervals
+#' @param h : bandwith parameter
+#' @param len_tau : number of tau parameters, default is 30
+#' @return est : set of estimated change points
+#' @export
+#' MNWBS_full
+#' 
 MNWBS_full =  function(y,z,alpha,beta,h,len_tau = 30)
 {
   p =  dim(y)[2]
@@ -131,7 +135,7 @@ MNWBS_full =  function(y,z,alpha,beta,h,len_tau = 30)
       vec_s =  matrix(0,v_n,p)
       for(ind_v in 1:v_n)
       {
-        vec = runif(p)
+        vec = (runif(p)-1)*2
         vec =  vec/sqrt(sum(vec^2))
         vec_s[ind_v,] = vec 
         if(ind_v< p+1)
@@ -177,11 +181,12 @@ MNWBS_full =  function(y,z,alpha,beta,h,len_tau = 30)
   print(min_pval)
   if(min_pval>.1)# (st <1.9)
   {
-    return(NULL)
+    est = NULL
+    return(est)
   }
+  est = S[[j]]
   
-  
-  return(S[[j]])
+  return(est)
 }
 #  
 

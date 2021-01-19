@@ -2,12 +2,12 @@
 % Please edit documentation in R/thresholding.R
 \name{thresholding}
 \alias{thresholding}
-\title{A function}
+\title{thresholding}
 \usage{
 thresholding(temp, tau, p)
 }
-\arguments{
-\item{p}{}
+\value{
+Shat
 }
 \description{
 A function

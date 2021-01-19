@@ -2,22 +2,25 @@
 % Please edit documentation in R/MNWBS_full.R
 \name{MNWBS_full}
 \alias{MNWBS_full}
-\title{A function to compute change points based on the  MNP method}
+\title{MNWBS_full function}
 \usage{
 MNWBS_full(y, z, alpha, beta, h, len_tau = 30)
 }
 \arguments{
-\item{y}{a matrix containing the data. Row correspond to different time points and columns to different variables}
+\item{y}{: a matrix containing the data. Row correspond to different time points and columns to different variables}
 
-\item{z}{a copy of the matrix y, it can be y itself}
+\item{z}{: a copy of the matrix y, it can be y itself}
 
-\item{alpha}{left end points of the random intervals}
+\item{alpha}{: left end points of the random intervals}
 
-\item{beta}{right end points of the random intervals}
+\item{beta}{: right end points of the random intervals}
 
-\item{h}{bandwith parameter}
+\item{h}{: bandwith parameter}
 
-\item{len_tau}{number of tau parameters, default is 30}
+\item{len_tau}{: number of tau parameters, default is 30}
+}
+\value{
+est : set of estimated change points
 }
 \description{
 A function to compute change points based on the  MNP method

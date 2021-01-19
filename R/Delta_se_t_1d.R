@@ -1,9 +1,14 @@
-#' A function
+#' Delta_se_t_1d
+#' 
+#'  A function
 #' @param y a matrix containing the data. Row correspond to different time points and columns to different variables
 #' @param s
 #' @param e
 #' @param t
 #' @param N
+#' @return temp
+#' @export
+#' Delta_se_t_1d
 
 Delta_se_t_1d = function(y,s,e,t,N)
 {
