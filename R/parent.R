@@ -1,4 +1,11 @@
+#' parent
+#'
+#' A function
 #' @param temp
+#' @return p
+#' @export
+#' parent
+#'
 
 parent =  function(temp)
 {

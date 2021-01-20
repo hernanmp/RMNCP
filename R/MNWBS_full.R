@@ -135,7 +135,7 @@ MNWBS_full =  function(y,z,alpha,beta,h,len_tau = 30)
       vec_s =  matrix(0,v_n,p)
       for(ind_v in 1:v_n)
       {
-        vec = (runif(p)-1)*2
+        vec = runif(p)
         vec =  vec/sqrt(sum(vec^2))
         vec_s[ind_v,] = vec 
         if(ind_v< p+1)
