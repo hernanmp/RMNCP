@@ -1,4 +1,4 @@
-# RRDecon
+# RMNCP
 
 To install and use the package  you can run in R:
 - library(devtools)
