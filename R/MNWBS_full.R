@@ -31,8 +31,6 @@ MNWBS_full =  function(y,z,alpha,beta,h,len_tau = 30)
     aux = sort(Dval,decreasing = TRUE)
     tau_grid = rev(aux[1:min(len_tau,length(Dval))])- 10^{-30}
     tau_grid =  tau_grid[which(is.na(tau_grid)==FALSE)] 
-    #tau_grid  =  tau_grid[which(tau_grid )]
-    # tau_grid = c(tau_grid,10)
     
     
     S =  c()
@@ -143,35 +141,23 @@ MNWBS_full =  function(y,z,alpha,beta,h,len_tau = 30)
           vec= rep(0,p)
           vec[ind_v] =1
         }
-        #aux = mean(exp(y[eta1:eta,]%*% vec))/ mean(exp(y[(eta+1):eta2,]%*% vec))
         aux = Delta_se_t_1d(y%*%vec,eta1+1,eta2,eta,rep(1,T))  
         #val_aux[ind_v] = aux
         pval[ind_v] = exp(-2*aux^2 )
+    
         
-        #exp(all.moments(y[eta1:eta,]%*% vec,5) - all.moments(y[(eta+1):eta2,]%*% vec,5))
-        #mean(exp(y[eta1:eta,]%*% vec))/ mean(exp(y[(eta+1):eta2,]%*% vec))
-        #all.moments(exp(y[eta1:eta,]%*% vec),5)/all.moments(exp(y[(eta+1):eta2,]%*% vec),5)
-        #all.moments(y[eta1:eta,]%*% vec,5)/all.moments(y[(eta+1):eta2,]%*% vec,5)
-        #all.moments(exp(y[eta1:eta,]%*% vec),5)/all.moments(exp(y[(eta+1):eta2,]%*% vec),5)
+        st_aux = aux
         
-        st_aux = aux#max(aux,1/aux )  
-        
-        # if(st_aux >st)
-        # {
-        #   st= st_aux
-        #   
-        # }
-        #if(st_aux >1.4)break;
       }## for ind_v
       pval_adj =  p.adjust(pval, method ="fdr" )
-      min(pval_adj)
+      #min(pval_adj)
       
       if(min_pval >  min(pval_adj))
       {
         min_pval = min(pval_adj)
       }
     }### for l
-    #if( st > sqrt(-0.5* log(0.1/v_n)) )#1.9)
+ 
     if(min_pval < 0.0005)#0.001
     {
       break;
